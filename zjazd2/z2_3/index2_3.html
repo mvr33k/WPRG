@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 2 i 3</title>
+</head>
+<body>
+
+<h1>Rezerwacja hotelu</h1>
+<form action="z2_3.php" method="post" style="width: 15%">
+    <label for="liczbaosob" style="width: 100%">Liczba osób (1-4):</label>
+    <select id="liczbaosob" name="liczbaosob" required>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+    </select><br><br>
+
+    <label for="imie">Imie:</label>
+    <input type="text" id="imie" name="imie" required><br><br>
+
+    <label for="nazwisko">Nazwisko:</label>
+    <input type="text" id="nazwisko" name="nazwisko" required><br><br>
+
+    <label for="adres">Adres:</label>
+    <input type="text" id="adres" name="adres" required><br><br>
+
+    <label for="karta">Nr. karty kredytowej:</label>
+    <input type="number" id="karta" name="karta" required><br><br>
+
+    <label for="mail">e-mail:</label>
+    <input type="text" id="mail" name="mail" required><br><br>
+
+    <label for="przyjazd">Dzień przyjazdu:</label>
+    <input type="text" id="przyjazd" name="przyjazd" required><br><br>
+
+    <label for="wyjazd">Dzień wyjazdu:</label>
+    <input type="text" id="wyjazd" name="wyjazd" required><br><br>
+
+    <label for="godzina">Godzina przyjazdu:</label>
+    <input type="text" id="godzina" name="godzina" required><br><br>
+
+        <fieldset>
+            <legend>Udogodnienia:</legend>
+            <label><input type="checkbox" name="udogodnienia[]" value="klimatyzacja"> Klimatyzacja</label><br>
+            <label><input type="checkbox" name="udogodnienia[]" value="popielniczka"> Popielniczka dla palacza</label><br>
+            <label><input type="checkbox" name="udogodnienia[]" value="lozko"> Łóżko dla dziecka</label><br>
+        </fieldset><br>
+
+    <input type="submit" value="Rezerwuj">
+</form>
+
+</body>
+</html>
