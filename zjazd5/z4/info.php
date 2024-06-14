@@ -3,14 +3,15 @@
 global $database;
 include 'navbar.php';
 include 'baza.php';
-// wyświetlenie ich forem
+
+if (isset($_GET['id'])) {
 
 
+    $car = $database->query('SELECT * FROM samochody WHERE id=' . $_GET['id'])->fetch_assoc();
+    $database->close();
 
-$cars = $database->query('SELECT * FROM samochody ORDER BY cena LIMIT 5');
-$database->close();
 
-echo '
+    echo '
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -23,9 +24,6 @@ echo '
         </tr>
     </thead>
     <tbody>
-';
-foreach ($cars as $car){
-    echo '
         <tr>
             <td>' . htmlspecialchars($car['id']) . '</td>
             <td>' . htmlspecialchars($car['marka']) . '</td>
@@ -34,5 +32,7 @@ foreach ($cars as $car){
             <td>' . htmlspecialchars($car['rok']) . '</td>
             <td>' . htmlspecialchars($car['opis']) . '</td>
         </tr>
+    </tbody>
+</table>
     ';
 }
